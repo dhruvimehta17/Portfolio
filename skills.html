@@ -35,10 +35,11 @@
       max-height: 500px; 
     }
 
-    .dropdown-arrow i.rotate {
+    /* .dropdown-arrow i.rotate {
       transform: rotate(180deg);
       transition: transform 0.3s ease;
-    }
+    } */
+
   </style>
 </head>
 <body class="dark-mode">
@@ -190,7 +191,7 @@
 
       function toggleAccordion() {
         const isOpen = content.classList.toggle('open');
-        arrowIcon.classList.toggle('rotate', isOpen);
+        // arrowIcon.classList.toggle('rotate', isOpen);
         header.setAttribute('aria-expanded', isOpen);
         content.setAttribute('aria-hidden', !isOpen);
       }
