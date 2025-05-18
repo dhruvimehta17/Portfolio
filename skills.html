@@ -177,33 +177,38 @@
     window.addEventListener('load', () => {
       document.body.classList.add('loaded');
     });
-
+  
     const toggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     toggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
-
-    const headers = document.querySelectorAll('.mobile-toggle');
-    headers.forEach(header => {
-      const content = header.parentElement.querySelector('.skills-grid-inner');
-      const arrowIcon = header.querySelector('.dropdown-arrow i');
-
-      function toggleAccordion() {
-        const isOpen = content.classList.toggle('open');
-        // arrowIcon.classList.toggle('rotate', isOpen);
-        header.setAttribute('aria-expanded', isOpen);
-        content.setAttribute('aria-hidden', !isOpen);
-      }
-
-      header.addEventListener('click', toggleAccordion);
-      header.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          toggleAccordion();
+  
+    // Detect if it's a touch device
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  
+    if (isTouchDevice) {
+      // Enable accordion behavior on touch devices
+      const headers = document.querySelectorAll('.mobile-toggle');
+      headers.forEach(header => {
+        const content = header.parentElement.querySelector('.skills-grid-inner');
+        const arrowIcon = header.querySelector('.dropdown-arrow i');
+  
+        function toggleAccordion() {
+          const isOpen = content.classList.toggle('open');
+          header.setAttribute('aria-expanded', isOpen);
+          content.setAttribute('aria-hidden', !isOpen);
         }
+  
+        header.addEventListener('click', toggleAccordion);
+        header.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleAccordion();
+          }
+        });
       });
-    });
-  </script>
+    }
+  </script>  
 </body>
 </html>
