@@ -1,0 +1,230 @@
+.skills-page {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  background: radial-gradient(circle at top, #1a1a1a, #0f0f0f);
+}
+
+.skills-page h2 {
+  font-size: 1.6rem;
+  color: var(--accent-primary);
+  margin-bottom: 3rem;
+  font-family: 'Press Start 2P', monospace;
+  text-shadow: 0 0 8px var(--accent-primary);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.skill-card {
+  background: #1e1e1e;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 255, 0.05);
+  font-family: 'Press Start 2P', monospace;
+  text-align: left;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.skill-icon {
+  font-size: 1.4rem;
+  color: var(--accent-primary);
+  transition: transform 0.3s ease;
+}
+
+.skill-title {
+  font-size: 0.9rem;
+  color: var(--accent-primary);
+  letter-spacing: 1px;
+  line-height: 1.9;
+}
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.15);
+}
+
+.skills-grid-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease-in-out;
+}
+
+.skill-card:hover .skills-grid-inner {
+  opacity: 1;
+  max-height: 1000px;
+  transform: translateY(0);
+}
+
+.skill-box {
+  background-color: #111;
+  border-radius: 12px;
+  padding: 1rem 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 0.7rem;
+  color: #fff;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.05);
+  transition: 0.2s;
+  line-height: 1.4;
+  text-align: center;
+  min-height: 75px;
+}
+
+.skill-box i {
+  font-size: 1.2rem;
+  color: var(--accent-primary);
+  margin-bottom: 0.4rem;
+}
+
+.skill-box:hover {
+  background-color: #222;
+  box-shadow: 0 0 15px var(--accent-primary);
+  transform: scale(1.05);
+}
+
+.dropdown-arrow {
+  margin-left: auto;
+  color: var(--accent-primary);
+  font-size: 0.7rem;
+  display: none;
+}
+
+/* Responsive Design */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .skills-page {
+    padding: 2.5rem 1rem;
+  }
+
+  .skills-page h2 {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 2px var(--accent-primary);
+  }
+
+  .skill-card {
+    padding: 1.5rem;
+  }
+  
+  .dropdown-arrow {
+    display: inline-block;
+  }
+
+  .skill-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .skill-title {
+    font-size: 0.75rem;
+    flex: 1;
+  }
+
+  .skill-box {
+    font-size: 0.6rem;
+    padding: 0.8rem;
+    min-height: 65px;
+  }
+
+  .skill-box i {
+    font-size: 1rem;
+  }
+}
+
+/* Phones (480px and below) */
+@media (max-width: 480px) {
+  .skills-page {
+    padding: 2rem 0.8rem;
+  }
+
+  .skills-page h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 1px var(--accent-primary);
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .skill-card {
+    padding: 1.2rem;
+  }
+
+  .dropdown-arrow {
+    display: inline-block;
+  }
+
+  .rotate i {
+    transform: rotate(180deg);
+  }  
+
+  .skill-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .skill-title {
+    font-size: 0.75rem;
+    flex: 1;
+  }
+
+  .skills-grid-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+
+  .skill-box {
+    font-size: 0.55rem;
+    padding: 0.7rem;
+    min-height: 60px;
+  }
+
+  .skill-box i {
+    font-size: 0.9rem;
+  }
+}
+
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #111;
+  color: var(--text-color);
+  font-size: 0.65rem;
+  border-top: 1px solid var(--accent-primary);
+  box-shadow: inset 0 1px 0 rgba(0, 255, 255, 0.1);
+  font-family: 'Press Start 2P', monospace;
+}
+
+@media screen and (max-width: 768px) {
+  .site-footer {
+    font-size: 0.5rem;
+    padding: 0.75rem 1rem;
+  }
+}

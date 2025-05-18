@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhruvi Mehta – Game Dev Portfolio</title>
+  <meta name="description" content="Dhruvi Mehta's portfolio – Full-stack Game Dev, AI Explorer, Pixel Aesthetic Wizard.">
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body class="dark-mode">
+  <div class="scanlines"></div>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">🎮 Dhruvi Mehta</h1>
+      <div class="menu-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="projects.html">💻 Projects</a></li>
+        <li><a href="skills.html">🛠 Skills</a></li>
+        <li><a href="exp.html">🧠 Experience</a></li>
+        <li><a href="blogs.html">📝 Blogs</a></li>
+        <li><a href="about.html">📬 Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="home">
+    <section class="intro">
+      <h2 class="hero-title">🎮 <span id="typing" class="hero-title"></span></h2>
+      <p>
+        👩‍💻 Level 3 Engineer 
+        <span class="title-subtext">🚀 Full Stack Developer</span>
+        <span class="title-subtext">🤖 AI Explorer</span> <br />
+        Gear up! Explore my projects, missions, and coding quests through this virtual arcade-style portfolio.
+      </p>
+      <div class="action-buttons">
+        <a href="assets/Dhruvi Bhavesh Mehta CV.pdf" download>
+          <i class="fas fa-download"></i> Equip Resume
+        </a>
+        <a href="projects.html">
+          Enter Projects <i class="fas fa-gamepad"></i>
+        </a>
+        <a href="about.html">
+          Contact HQ <i class="fas fa-headset"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with ❤️ by Dhruvi Mehta</p>
+  </footer>  
+
+  <script src="js/typing.js"></script>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

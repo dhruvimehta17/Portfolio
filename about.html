@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhruvi Mehta - Contact</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+</head>
+<body class="dark-mode">
+  <div class="scanlines"></div>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">🎮 Dhruvi Mehta</h1>
+      <div class="menu-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="projects.html">💻 Projects</a></li>
+        <li><a href="skills.html">🛠 Skills</a></li>
+        <li><a href="exp.html">🧠 Experience</a></li>
+        <li><a href="blogs.html">📝 Blogs</a></li>
+        <li><a href="about.html">📬 Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="about">
+    <div class="about-container">
+      <div class="about-img">
+        <img src="assets/dhruvi.png" alt="Dhruvi Mehta" />
+      </div>
+      <div class="about-text">
+        <h2 style="text-align: center;">📬 Contact Me</h2>
+        <p>
+          I'm a Computer Engineering student passionate about creating interactive web apps, working on AI innovations, and designing user-first solutions. Feel free to connect with me below!
+        </p>
+
+        <section class="contact-boxes">
+          <a class="contact-card" href="https://www.linkedin.com/in/dhruvibmehta" target="_blank">
+            <i class="fab fa-linkedin"></i>
+            <span>/in/dhruvibmehta</span>
+          </a>
+
+          <a class="contact-card" href="mailto:dhruvimehta1702@gmail.com">
+            <i class="fas fa-envelope"></i>
+            <span>dhruvimehta1702@gmail.com</span>
+          </a>
+
+          <a class="contact-card" href="https://github.com/dhruvimehta17" target="_blank">
+            <i class="fab fa-github"></i>
+            <span>dhruvimehta17</span>
+          </a>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with ❤️ by Dhruvi Mehta</p>
+  </footer>  
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
