@@ -2,36 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dhruvi Mehta - Contact</title>
+
+  <link rel="preload" href="css/base.css" as="style" />
+  <link rel="preload" href="css/about.css" as="style" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/about.css" />
+
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  </noscript>
+
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
 </head>
 <body class="dark-mode">
   <div class="scanlines"></div>
   <header>
     <nav class="navbar">
       <h1 class="logo">🎮 Dhruvi Mehta</h1>
-      <div class="menu-toggle" aria-label="Toggle navigation">
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
         <i class="fas fa-bars"></i>
-      </div>
-      <ul class="nav-links">
+      </button>
+      <ul class="nav-links" id="primary-navigation">
         <li><a href="index.html">🏠 Home</a></li>
         <li><a href="projects.html">💻 Projects</a></li>
         <li><a href="skills.html">🛠 Skills</a></li>
         <li><a href="exp.html">🧠 Experience</a></li>
         <li><a href="blogs.html">📝 Blogs</a></li>
-        <li><a href="about.html">📬 Contact</a></li>
+        <li><a href="about.html" aria-current="page">📬 Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="about">
+  <main class="about" tabindex="-1">
     <div class="about-container">
       <div class="about-img">
-        <img src="assets/dhruvi.png" alt="Dhruvi Mehta" />
+        <img 
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" 
+          data-src="assets/dhruvi.png" 
+          alt="Dhruvi Mehta" 
+          loading="lazy" 
+          decoding="async" 
+          class="lazy-img"
+          width="300"
+          height="300"
+        />
       </div>
       <div class="about-text">
         <h2 style="text-align: center;">📬 Contact Me</h2>
@@ -40,7 +68,7 @@
         </p>
 
         <section class="contact-boxes">
-          <a class="contact-card" href="https://www.linkedin.com/in/dhruvibmehta" target="_blank">
+          <a class="contact-card" href="https://www.linkedin.com/in/dhruvibmehta" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-linkedin"></i>
             <span>/in/dhruvibmehta</span>
           </a>
@@ -50,7 +78,7 @@
             <span>dhruvimehta1702@gmail.com</span>
           </a>
 
-          <a class="contact-card" href="https://github.com/dhruvimehta17" target="_blank">
+          <a class="contact-card" href="https://github.com/dhruvimehta17" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-github"></i>
             <span>dhruvimehta17</span>
           </a>
@@ -61,13 +89,26 @@
 
   <footer class="site-footer">
     <p>Made with ❤️ by Dhruvi Mehta</p>
-  </footer>  
+  </footer>
 
-  <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true' || false;
+        toggle.setAttribute('aria-expanded', !expanded);
+        navLinks.classList.toggle('active');
+      });
+
+      const lazyImages = document.querySelectorAll('img.lazy-img');
+      lazyImages.forEach(img => {
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+        }
+      });
     });
   </script>
 </body>

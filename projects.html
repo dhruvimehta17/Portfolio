@@ -8,6 +8,22 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/projects.css" />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+
+  <link rel="preload" as="image" href="assets/secureshare.png" />
+  <link rel="preload" as="image" href="assets/yogyatra.png" />
+  <link rel="preload" as="image" href="assets/sql-chatagent.png" />
+  <link rel="preload" as="image" href="assets/anomaly-thumb.jpg" />
+  <link rel="preload" as="image" href="assets/studentsystem.jpg" />
+  <link rel="preload" as="image" href="assets/taskmanagerapp.jpg" />
+  <link rel="preload" as="image" href="assets/mental-health-app.jpeg" />
+  <link rel="preload" as="image" href="assets/stopwatch.jpg" />
+
 </head>
 <body class="dark-mode">
   <div class="scanlines"></div>
@@ -33,87 +49,86 @@
     <div class="project-grid">
       <!-- Project 1 -->
       <div class="project-card">
-        <img src="assets/secureshare.png" alt="Secure File Sharing Preview" />
+        <img src="assets/secureshare.png" alt="Secure File Sharing Preview" loading="eager" width="400" height="225" />
         <h3>Secure File Sharing</h3>
         <p>Website for secure file/text sharing with custom links and expire time.</p>
         <div class="project-buttons">
-          <a href="https://secureshare.in" target="_blank">See Live</a>
-          <a href="https://github.com/dhruvimehta17/file-sharing" target="_blank">GitHub</a>
+          <a href="https://secureshare.in" target="_blank" rel="noopener">See Live</a>
+          <a href="https://github.com/dhruvimehta17/file-sharing" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
 
       <!-- Project 2 -->
       <div class="project-card">
-        <img src="assets/yogyatra.png" alt="Secure File Sharing Preview" />
+        <img src="assets/yogyatra.png" alt="Yogyatra Preview" loading="lazy" width="400" height="225" />
         <h3>Yogyatra</h3>
         <p>Wellness platform offering transformative yoga and meditation retreats across India.</p>
         <div class="project-buttons">
-          <a href="https://yogyatra.org" target="_blank">See Live</a>
+          <a href="https://yogyatra.org" target="_blank" rel="noopener">See Live</a>
         </div>
       </div>
 
       <!-- Project 3 -->
       <div class="project-card">
-        <img src="assets/sql-chatagent.png" alt="Secure File Sharing Preview" />
+        <img src="assets/sql-chatagent.png" alt="SQL Chat Agent Preview" loading="lazy" width="400" height="225" />
         <h3>SQL Chat Agent</h3>
         <p>AI SQL Agent converts natural language into SQL, and responds with answers, charts, and explanations.</p>
         <div class="project-buttons">
-          <a href="https://sql-chat-agent.vercel.app/" target="_blank">See Live</a>
-          <a href="https://github.com/dhruvimehta17/SQL_ChatAgent" target="_blank">GitHub</a>
+          <a href="https://sql-chat-agent.vercel.app/" target="_blank" rel="noopener">See Live</a>
+          <a href="https://github.com/dhruvimehta17/SQL_ChatAgent" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
 
       <!-- Project 4 -->
       <div class="project-card">
-        <img src="assets/anomaly-thumb.jpg" alt="Anomaly Detection Preview" />
+        <img src="assets/anomaly-thumb.jpg" alt="Anomaly Detection Preview" loading="lazy" width="400" height="225" />
         <h3>Anomaly Detection</h3>
         <p>One-Class SVM + OpenCV to detect intrusions in surveillance systems.</p>
         <div class="project-buttons">
-          <a href="https://github.com/dhruvimehta17/Anomaly-Detection" target="_blank">GitHub</a>
+          <a href="https://github.com/dhruvimehta17/Anomaly-Detection" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
 
       <!-- Project 5 -->
       <div class="project-card">
-        <img src="assets/studentsystem.jpg" alt="Anomaly Detection Preview" />
+        <img src="assets/studentsystem.jpg" alt="Student Management System Preview" loading="lazy" width="400" height="225" />
         <h3>Student Management System</h3>
         <p>Scalable system built with Spring Boot, Docker, and cloud-native microservices.</p>
         <div class="project-buttons">
-          <a href="https://github.com/dhruvimehta17/Student-Management-System" target="_blank">GitHub</a>
+          <a href="https://github.com/dhruvimehta17/Student-Management-System" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
 
       <!-- Project 6 -->
       <div class="project-card">
-        <img src="assets/taskmanagerapp.jpg" alt="Anomaly Detection Preview" />
+        <img src="assets/taskmanagerapp.jpg" alt="Task Manager App Preview" loading="lazy" width="400" height="225" />
         <h3>Task Manager App</h3>
         <p>A modern Flutter task manager app with BLoC, offline (Hive) and optional REST API support.</p>
         <div class="project-buttons">
-          <a href="https://github.com/dhruvimehta17/Task-Manager-Flutter-App" target="_blank">GitHub</a>
+          <a href="https://github.com/dhruvimehta17/Task-Manager-Flutter-App" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
 
       <!-- Project 7 -->
       <div class="project-card">
-        <img src="assets/mental-health-app.jpeg" alt="Anomaly Detection Preview" />
+        <img src="assets/mental-health-app.jpeg" alt="Mental Health App Preview" loading="lazy" width="400" height="225" />
         <h3>Mental Health App</h3>
         <p>Mental Health web app to track moods, access resources, and support well-being with a modern, user-focused UI.</p>
         <div class="project-buttons">
-          <a href="https://github.com/dhruvimehta17/Mental-Health-App" target="_blank">GitHub</a>
+          <a href="https://github.com/dhruvimehta17/Mental-Health-App" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
 
       <!-- Project 8 -->
       <div class="project-card">
-        <img src="assets/stopwatch.jpg" alt="Anomaly Detection Preview" />
+        <img src="assets/stopwatch.jpg" alt="Stopwatch Preview" loading="lazy" width="400" height="225" />
         <h3>Stopwatch</h3>
         <p>A simple python code for stopwatch with comments for better understand.</p>
         <div class="project-buttons">
-          <a href="https://github.com/dhruvimehta17/stopwatch" target="_blank">GitHub</a>
+          <a href="https://github.com/dhruvimehta17/stopwatch" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
 
-      <!-- Add more project-card blocks similarly -->
     </div>
   </main>
 
@@ -126,6 +141,12 @@
     const navLinks = document.querySelector('.nav-links');
     toggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
     });
   </script>
 </body>

@@ -2,33 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dhruvi Mehta - Experience</title>
+  
+  <link rel="preload" href="css/base.css" as="style" />
+  <link rel="preload" href="css/exp.css" as="style" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/exp.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  </noscript>
+
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
 </head>
 <body class="dark-mode">
   <div class="scanlines"></div>
   <header>
     <nav class="navbar">
       <h1 class="logo">🎮 Dhruvi Mehta</h1>
-      <div class="menu-toggle" aria-label="Toggle navigation">
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
         <i class="fas fa-bars"></i>
-      </div>
-      <ul class="nav-links">
+      </button>
+      <ul class="nav-links" id="primary-navigation">
         <li><a href="index.html">🏠 Home</a></li>
         <li><a href="projects.html">💻 Projects</a></li>
         <li><a href="skills.html">🛠 Skills</a></li>
-        <li><a href="exp.html">🧠 Experience</a></li>
+        <li><a href="exp.html" aria-current="page">🧠 Experience</a></li>
         <li><a href="blogs.html">📝 Blogs</a></li>
         <li><a href="about.html">📬 Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="experience-page">
+  <main class="experience-page" tabindex="-1">
     <h2>🧩 My Journey & Roles</h2>
     <div class="experience-grid">
 
@@ -67,13 +86,17 @@
 
   <footer class="site-footer">
     <p>Made with ❤️ by Dhruvi Mehta</p>
-  </footer>  
+  </footer>
 
-  <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true' || false;
+        toggle.setAttribute('aria-expanded', !expanded);
+        navLinks.classList.toggle('active');
+      });
     });
   </script>
 </body>
