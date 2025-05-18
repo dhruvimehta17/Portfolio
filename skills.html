@@ -184,31 +184,39 @@
       navLinks.classList.toggle('active');
     });
   
-    // Detect if it's a touch device
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   
     if (isTouchDevice) {
-      // Enable accordion behavior on touch devices
       const headers = document.querySelectorAll('.mobile-toggle');
+  
       headers.forEach(header => {
-        const content = header.parentElement.querySelector('.skills-grid-inner');
-        const arrowIcon = header.querySelector('.dropdown-arrow i');
+        header.addEventListener('click', () => {
+          const content = header.parentElement.querySelector('.skills-grid-inner');
+          const isOpen = content.classList.contains('open');
+
+          document.querySelectorAll('.skills-grid-inner.open').forEach(openContent => {
+            if (openContent !== content) {
+              openContent.classList.remove('open');
+              const openHeader = openContent.parentElement.querySelector('.mobile-toggle');
+              openHeader.setAttribute('aria-expanded', false);
+              openContent.setAttribute('aria-hidden', true);
+            }
+          });
+
+          content.classList.toggle('open', !isOpen);
+          header.setAttribute('aria-expanded', !isOpen);
+          content.setAttribute('aria-hidden', isOpen);
+        });
   
-        function toggleAccordion() {
-          const isOpen = content.classList.toggle('open');
-          header.setAttribute('aria-expanded', isOpen);
-          content.setAttribute('aria-hidden', !isOpen);
-        }
-  
-        header.addEventListener('click', toggleAccordion);
         header.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            toggleAccordion();
+            header.click(); 
           }
         });
       });
     }
-  </script>  
+  </script>
+  
 </body>
 </html>
